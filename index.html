@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Jesus Cardozo" />
+    <meta name="description" content="Appetizers Website Restaurant" />
+    <meta name="keywords" content="Appetizers,Restaurant,Restaurante,Gourmet,Nezahualcoyotl" />
+    <meta name="Resource-type" content="Document" />
+
+    <!-- JQUERY 1.11.1 -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <!-- TweenMax js -->
+    <script type="text/javascript" src="js/TweenMax.min.js"></script>
+    <!-- fullpage css -->
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+    <!-- fullpage JS -->
+    <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+    <!-- local css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- local js -->
+    <script type="text/javascript" src="js/init.js"></script>
+
+    <!--[if IE]>
+            <script type="text/javascript">
+                 var console = { log: function() {} };
+            </script>
+        <![endif]-->
+
+    <title>Appetizers</title>
+</head>
+
+<body>
+
+    <div id="fullpage">
+        <div class="section" id="section0" data-anchor="home">
+
+            <video id="home-video" muted loop data-autoplay>
+                  <source src="video/home.mp4" type="video/mp4">
+            </video>
+            <div class="title-content-home">
+                <div class="sandbox sandbox-correct-pronounciation">
+                    <h1 class="heading heading-correct-pronounciation">
+                        <em>Appetizers</em>
+                    </h1>
+                </div>
+            </div>
+
+        </div>
+        <div class="section" id="section1" data-anchor="menu">
+            <div class="slide">
+                <div class="intro">
+                    <p>Food and Drinks</p>
+                    <span class="letter" data-letter="M">M</span>
+                    <span class="letter" data-letter="E">E</span>
+                    <span class="letter" data-letter="N">N</span>
+                    <span class="letter" data-letter="U">U</span>
+                    <p>Restaurant</p>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="intro">
+                    <img src="imgs/1.png" alt="simple" />
+                    <h1>Simple</h1>
+                    <p>Easy to use. Configurable and customizable.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="intro">
+                    <img src="imgs/2.png" alt="Cool" />
+                    <h1>Cool</h1>
+                    <p>It just looks cool. Impress everybody with a simple and modern web design!</p>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="intro">
+                    <img src="imgs/3.png" alt="Compatible" />
+                    <h1>Compatible</h1>
+                    <p>Working in modern and old browsers too! IE 8 users don't have the fault of using that horrible browser! Lets give them a chance to see your site in a proper way!</p>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section2" data-anchor="gallery">
+            <div class="intro">
+                <h1>Example</h1>
+                <p>HTML markup example to define 4 sections.</p>
+                <img src="imgs/example2.png" alt="example" />
+            </div>
+        </div>
+        <div class="section" id="section3" data-anchor="reservation">
+            <div class="intro">
+                <h1>Working On Tablets</h1>
+                <p>
+                    Designed to fit to different screen sizes as well as tablet and mobile devices.
+                    <br /><br /><br /><br /><br /><br />
+                </p>
+            </div>
+            <img src="imgs/tablets.png" alt="tablets" />
+        </div>
+        <div class="section" id="section4" data-anchor="contact">
+            <div class="intro">
+                <h1>Working On Tablets</h1>
+                <p>
+                    Designed to fit to different screen sizes as well as tablet and mobile devices.
+                    <br /><br /><br /><br /><br /><br />
+                </p>
+            </div>
+            <img src="imgs/tablets.png" alt="tablets" />
+        </div>
+    </div>
+
+    <label id="menu-fullpage">
+        <input type='checkbox'>
+        <span class='menu'>
+          <span class='hamburger'></span>
+        </span>
+        <ul>
+            <li class="item-menu" data-menuanchor="home"><a href="#home">Home</a></li>
+            <li class="item-menu" data-menuanchor="menu"><a href="#menu">Menu</a></li>
+            <li class="item-menu" data-menuanchor="gallery"><a href="#gallery">Gallery</a></li>
+            <li class="item-menu" data-menuanchor="reservation"><a href="#reservation">Reservation</a></li>
+            <li class="item-menu" data-menuanchor="contact"><a href="#contact">Contact</a></li>
+        </ul>
+    </label>
+
+</body>
+
+</html>

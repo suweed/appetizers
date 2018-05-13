@@ -1,0 +1,390 @@
+@import url(https://fonts.googleapis.com/css?family=Seaweed+Script);
+
+/* Reset CSS
+ * --------------------------------------- */
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+table {
+    border-spacing: 0;
+}
+
+fieldset,
+img {
+    border: 0;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+    font-weight: normal;
+    font-style: normal;
+}
+
+strong {
+    font-weight: bold;
+}
+
+ol,
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+caption,
+th {
+    text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+q:before,
+q:after {
+    content: '';
+}
+
+abbr,
+acronym {
+    border: 0;
+}
+
+
+/* Custom CSS
+ * --------------------------------------- */
+
+body {
+    font-family: arial, helvetica;
+    color: #333;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.wrap {
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    position: relative;
+}
+
+p {
+    font-size: 2em;
+}
+
+.intro p {
+    width: 50%;
+    margin: 0 auto;
+    font-size: 1.5em;
+}
+
+.section {
+    text-align: center;
+}
+
+
+/** Menu fullpage
+ * -------------------------------------- */
+
+label .menu {
+    position: absolute;
+    right: -100px;
+    top: -100px;
+    z-index: 100;
+    width: 200px;
+    height: 200px;
+    background: #FFF;
+    border-radius: 50% 50% 50% 50%;
+    transition: .5s ease-in-out;
+    box-shadow: 0 0 0 0 #FFF, 0 0 0 0 #FFF;
+    cursor: pointer;
+}
+
+label .hamburger {
+    position: absolute;
+    top: 135px;
+    left: 50px;
+    width: 30px;
+    height: 2px;
+    background: #000;
+    display: block;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    transition: .5s ease-in-out;
+}
+
+label .hamburger:after,
+label .hamburger:before {
+    transition: .5s ease-in-out;
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+
+label .hamburger:before {
+    top: -10px;
+}
+
+label .hamburger:after {
+    bottom: -10px;
+}
+
+label input {
+    display: none;
+}
+
+label input:checked+.menu {
+    box-shadow: 0 0 0 100vw #FFF, 0 0 0 100vh #FFF;
+    border-radius: 0;
+}
+
+label input:checked+.menu .hamburger {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+label input:checked+.menu .hamburger:after {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    bottom: 0;
+}
+
+label input:checked+.menu .hamburger:before {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    top: 0;
+}
+
+label input:checked+.menu+ul {
+    opacity: 1;
+}
+
+label ul {
+    z-index: 200;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: .25s 0s ease-in-out;
+}
+
+label a {
+    margin-bottom: 1em;
+    display: block;
+    color: #000;
+    text-decoration: none;
+}
+
+
+/* Sections
+* --------------------------------------- */
+
+#section0 img,
+#section1 img {
+    margin: 20px 0 0 0;
+}
+
+#section2 img {
+    margin: 20px 0 0 52px;
+}
+
+#section3 img {
+    bottom: 0px;
+    position: absolute;
+    margin-left: -420px;
+}
+
+
+/**
+ Section 0 - HOME
+ ---------------------------------------- */
+
+.sandbox-correct-pronounciation {
+    padding: 5em 0 5em 0;
+}
+
+.heading-correct-pronounciation {
+    margin: auto;
+    text-align: center;
+    position: relative;
+}
+
+.heading h1 {
+    color: #fff;
+    font-family: 'Cardo', serif;
+    font-size: 1.5em;
+    font-weight: normal;
+    font-style: italic;
+    letter-spacing: 0.1em;
+    line-height: 2.2em;
+}
+
+em {
+    font-family: 'EB Garamond', serif;
+    font-size: 3.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: block;
+    font-style: normal;
+    padding-top: 0.1em;
+    text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.1);
+}
+
+em::before,
+em::after {
+    content: "§";
+    display: inline-block;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0.2;
+    margin: 0 0.6em;
+    font-size: 0.5em;
+}
+
+#home-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    /*filter: grayscale(1);*/
+}
+
+.title-content-home {
+    z-index: 5;
+    position: relative;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+1,000000+100&0+13,1+34,1+68,0+91 */
+    background: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 0) 13%, rgba(0, 0, 0, 1) 34%, rgba(0, 0, 0, 1) 68%, rgba(0, 0, 0, 0) 91%, rgba(0, 0, 0, 0) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 0) 13%, rgba(0, 0, 0, 1) 34%, rgba(0, 0, 0, 1) 68%, rgba(0, 0, 0, 0) 91%, rgba(0, 0, 0, 0) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 0) 13%, rgba(0, 0, 0, 1) 34%, rgba(0, 0, 0, 1) 68%, rgba(0, 0, 0, 0) 91%, rgba(0, 0, 0, 0) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#00000000', GradientType=1);
+    /* IE6-9 */
+}
+
+.title-content-home h1 {
+    color: #fff;
+}
+
+
+/** Section 1 - MENU
+ * ------------------------------------------- */
+
+#section1 {
+    background-image: url(../img/seigaiha.png)
+}
+
+.fp-controlArrow.fp-prev {
+    left: 15px;
+    width: 0;
+    border-width: 38.5px 34px 38.5px 0;
+    border-color: transparent #93979a transparent transparent;
+}
+
+.fp-controlArrow.fp-next {
+    right: 15px;
+    border-width: 38.5px 0 38.5px 34px;
+    border-color: transparent transparent transparent #93979a;
+}
+
+.letter {
+    display: inline-block;
+    font-weight: 900;
+    font-size: 8em;
+    margin: 0.2em;
+    position: relative;
+    color: rgb(141, 165, 173);
+    transform-style: preserve-3d;
+    perspective: 400;
+    z-index: 1;
+}
+
+.letter:before,
+.letter:after {
+    position: absolute;
+    content: attr(data-letter);
+    transform-origin: top left;
+    top: 0;
+    left: 0;
+}
+
+.letter,
+.letter:before,
+.letter:after {
+    transition: all 0.3s ease-in-out;
+}
+
+.letter:before {
+    color: #fff;
+    text-shadow: -1px 0px 1px rgba(255, 255, 255, .8), 1px 0px 1px rgba(0, 0, 0, .8);
+    z-index: 3;
+    transform: rotateX(0deg) rotateY(-15deg) rotateZ(0deg);
+}
+
+.letter:after {
+    color: rgba(0, 0, 0, .11);
+    z-index: 2;
+    transform: scale(1.08, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 1deg);
+}
+
+.letter:hover:before {
+    color: #fafafa;
+    transform: rotateX(0deg) rotateY(-40deg) rotateZ(0deg);
+}
+
+.letter:hover:after {
+    transform: scale(1.08, 1) rotateX(0deg) rotateY(40deg) rotateZ(0deg) skew(0deg, 22deg);
+}
