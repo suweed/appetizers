@@ -1,11 +1,7 @@
 $(document).ready(function() {
 
-    $(".item-menu").click(function() {
-        $(".hamburger").click();
-    });
-
     $('#fullpage').fullpage({
-        anchors: ['home', 'menu', 'gallery', 'reservation', 'contact'],
+        anchors: ['home', 'menu', 'gallery', 'buffet', 'reservation', 'contact'],
         menu: '#menu-fullpage',
         scrollingSpeed: 1000,
         onLeave: function(index, nextIndex, direction) {
@@ -36,5 +32,17 @@ $(document).ready(function() {
                 tl.fromTo(titleContent, 2, { bottom: -100 }, { top: 0, autoAlpha: 0.7 });
             }
         }
+    });
+
+    $(".item-menu").click(function() {
+        $(".hamburger").click();
+    });
+
+    $(".slider-selector").click(function(){
+        var slide = $(this).attr("data-slide");
+        
+        console.log(slide);
+
+        $.fn.fullpage.moveTo('menu', slide);
     });
 });

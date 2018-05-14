@@ -1,4 +1,7 @@
-@import url(https://fonts.googleapis.com/css?family=Seaweed+Script);
+@font-face {
+    font-family: 'qumpellka';
+    src: url('../fonts/qumpellka.otf');
+}
 
 /* Reset CSS
  * --------------------------------------- */
@@ -130,7 +133,7 @@ p {
  * -------------------------------------- */
 
 label .menu {
-    position: absolute;
+    position: fixed;
     right: -100px;
     top: -100px;
     z-index: 100;
@@ -203,6 +206,7 @@ label input:checked+.menu .hamburger:before {
 
 label input:checked+.menu+ul {
     opacity: 1;
+    display: block;
 }
 
 label ul {
@@ -214,6 +218,7 @@ label ul {
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: .25s 0s ease-in-out;
+    display: none;
 }
 
 label a {
@@ -223,9 +228,20 @@ label a {
     text-decoration: none;
 }
 
+.item-menu a{
+    font-family: 'qumpellka', serif;
+    font-size: 30px;
+}
+.item-menu a:hover{
+    text-decoration: underline;
+}
 
 /* Sections
 * --------------------------------------- */
+
+.section {
+    background-size: cover;
+}
 
 #section0 img,
 #section1 img {
@@ -257,9 +273,8 @@ label a {
     position: relative;
 }
 
-.heading h1 {
+.heading {
     color: #fff;
-    font-family: 'Cardo', serif;
     font-size: 1.5em;
     font-weight: normal;
     font-style: italic;
@@ -268,9 +283,8 @@ label a {
 }
 
 em {
-    font-family: 'EB Garamond', serif;
+    font-family: 'qumpellka', serif;
     font-size: 3.5em;
-    text-transform: uppercase;
     letter-spacing: 0.1em;
     display: block;
     font-style: normal;
@@ -346,7 +360,7 @@ em::after {
     font-size: 8em;
     margin: 0.2em;
     position: relative;
-    color: rgb(141, 165, 173);
+    color: seagreen;
     transform-style: preserve-3d;
     perspective: 400;
     z-index: 1;
@@ -388,3 +402,197 @@ em::after {
 .letter:hover:after {
     transform: scale(1.08, 1) rotateX(0deg) rotateY(40deg) rotateZ(0deg) skew(0deg, 22deg);
 }
+
+.intro h1{
+    font-family: 'qumpellka', serif;
+    font-size: 60px;
+}
+
+.intro-menu {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    position: relative;
+}
+.section-menu{
+    position: relative;
+    float: left;
+    width: 33%;
+    height: 100%;
+}
+
+.section-menu-grid{
+    position: relative;
+    float: left;
+    width: 33%;
+    height: 300px;
+}
+
+.section-menu ol{
+    font-size: 20px;
+    text-align: left;
+    padding: 15px;
+}
+
+.section-menu ol li{
+    width: 100%;
+    height: 25px;
+}
+
+.section-menu-grid ol{
+    font-size: 20px;
+    text-align: left;
+    padding: 15px;
+}
+
+.section-menu-grid ol li{
+    width: 100%;
+    height: 25px;
+}
+
+.slider-selector{
+    cursor: pointer;
+}
+
+.slider-selector:hover{
+    color: seagreen;
+
+}
+.content-options-menu {
+    top: 20%;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.middle-menu{
+    top: 10%;
+}
+.large-menu{
+    top: 5%;
+}
+
+.section-menu h2 {
+    font-family: 'qumpellka', serif;
+    font-size: 30px;
+    margin: 5%;
+    color: seagreen;
+}
+
+.section-menu-grid h2 {
+    font-family: 'qumpellka', serif;
+    font-size: 30px;
+    margin: 5%;
+    color: seagreen;
+}
+
+.section-right{
+    float: right;
+}
+.section-center{
+    text-align: center;
+    margin: auto;
+    float: none;
+}
+.note-include{
+    font-size: 12px;
+}
+
+.separator-saucer, .bottle-name{
+    color: #000;
+}
+.saucer-name, .type-bottle{
+    float: left;
+}
+.saucer-price, .bottle-price{
+    float: right;
+}
+.li-bottles{
+    height: 70px !important;
+}
+.type-bottle, .bottle-price{
+    width: 50%;
+}
+.bottle-price{
+    text-align: right;
+}
+
+/** buffet
+ *------------------------------------------------------------------ */
+#section3{
+    background-image: url("../img/breakfast-buffet.jpeg");
+}
+
+.panel-content-blur{
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 30%;
+    left: 0;
+    background-color: #ffe4f7ad;
+    margin: auto;
+    background-image: url(../img/breakfast-buffet.jpeg);
+    background-size: cover;
+    background-position: center;
+    display: block;
+    /*filter: blur(100px);*/
+    filter: blur(5px);
+}
+ .intro-buffet{
+    width: 80%;
+    margin: auto;
+    position: relative;
+ }
+
+ .subtitle-buffet{
+    font-size: 25px;
+    height: 100px;
+    line-height: 100px;
+    color: #000;
+ }
+
+ .available-schedules{
+    width: 100%;
+    height: 100%;
+    margin-top: 5%;
+    position: relative;
+    display: block;
+ }
+
+ .days-available{
+    height: 80px;
+    font-size: 30px;
+    color: #e85b15;
+    line-height: 80px;
+    text-align: center;
+ }
+
+ .price-buffet{
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 100%;
+    color: #000;
+ }
+
+ .price-buffet ol{
+    font-size: 20px;
+    text-align: left;
+    padding: 15px;
+}
+
+.price-buffet ol li{
+    width: 100%;
+    height: 25px;
+}
+
+ .hours-available{
+    width: 50%;
+    position: relative;
+    height: 100%;
+    float: right;
+    font-size: 20px;
+    line-height: 40px;
+    color: #000;
+ }

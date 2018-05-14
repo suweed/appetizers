@@ -9,8 +9,10 @@
     <meta name="Resource-type" content="Document" />
 
     <!-- JQUERY 1.11.1 -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <!-- CDN fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- TweenMax js -->
     <script type="text/javascript" src="js/TweenMax.min.js"></script>
     <!-- fullpage css -->
@@ -35,7 +37,6 @@
 
     <div id="fullpage">
         <div class="section" id="section0" data-anchor="home">
-
             <video id="home-video" muted loop data-autoplay>
                   <source src="video/home.mp4" type="video/mp4">
             </video>
@@ -46,67 +47,576 @@
                     </h1>
                 </div>
             </div>
-
         </div>
         <div class="section" id="section1" data-anchor="menu">
             <div class="slide">
                 <div class="intro">
-                    <p>Food and Drinks</p>
+                    <p>Bienvenido</p>
                     <span class="letter" data-letter="M">M</span>
                     <span class="letter" data-letter="E">E</span>
                     <span class="letter" data-letter="N">N</span>
                     <span class="letter" data-letter="U">U</span>
-                    <p>Restaurant</p>
+                    <p>
+                        <span class="slider-selector" data-slide="1">Desayunos</span>
+                        <i class="fa fa-pagelines"></i>
+                        <span class="slider-selector" data-slide="2">Sopas, Cremas & Pastas </span>
+                        <i class="fa fa-pagelines"></i>
+                        <span class="slider-selector" data-slide="3">Mar & Tierra</span>
+                        <i class="fa fa-pagelines"></i>
+                        <span class="slider-selector" data-slide="4">Hamburguesas & Baguettes</span>
+                        <i class="fa fa-pagelines"></i>
+                        <span class="slider-selector" data-slide="5">Ensaladas</span>
+                        <i class="fa fa-pagelines"></i>
+                        <span class="slider-selector" data-slide="6">Niños</span>
+                        <i class="fa fa-pagelines"></i>
+                        <span class="slider-selector" data-slide="7">De nuestra barra</span>
+                        <i class="fa fa-pagelines"></i>
+                        <span class="slider-selector" data-slide="8">Licores</span>
+                        <i class="fa fa-pagelines"></i>
+                        <span class="slider-selector" data-slide="9">Fuente de Sodas</span>
+                    </p>
                 </div>
             </div>
             <div class="slide">
-                <div class="intro">
-                    <img src="imgs/1.png" alt="simple" />
-                    <h1>Simple</h1>
-                    <p>Easy to use. Configurable and customizable.</p>
+                <div class="intro intro-menu">
+                    <div class="title-section-menu">
+                            <h1>Desayunos</h1>
+                            <div class="note-include">
+                                <div><strong>Todos incluyen:</strong></div>
+                                <span>(Fruta, Jugo y Café)</span>
+                            </div>
+                    </div>
+                    <div class="content-options-menu large-menu">
+                        <div class="favorites-content section-menu">
+                            <h2>Favoritos</h2>
+                            <ol>
+                                <li><span class="saucer-name">Plato de fruta</span><span class="saucer-price">$93</span></li>
+                                <li><span class="saucer-name">Plato de fruta con helado</span><span class="saucer-price">$93</span></li>
+                                <li><span class="saucer-name">Plato de fruta con queso cottage</span><span class="saucer-price">$96</span></li>
+                                <li><span class="saucer-name">Hot Cake estilo americano</span><span class="saucer-price">$105</span></li>
+                                <li><span class="saucer-name">Club sandwich</span><span class="saucer-price">$126</span></li>
+                                <li><span class="saucer-name">Sandwich de pollo</span><span class="saucer-price">$106</span></li>
+                                <li><span class="saucer-name">Hot Cake dulce</span><span class="saucer-price">$99</span></li>
+                                <li><span class="saucer-name">Sandwich de jamon</span><span class="saucer-price">$106</span></li>
+                                <li><span class="saucer-name">Cuernitos</span><span class="saucer-price">$126</span></li>
+                                <li><span class="saucer-name">Sopecitos</span><span class="saucer-price">$96</span></li>
+                                <li><span class="saucer-name">Sincronizadas</span><span class="saucer-price">$104</span></li>
+                                <li><span class="saucer-name">Molletes</span><span class="saucer-price">$94</span></li>
+                                <li><span class="saucer-name">Tacos dorados</span><span class="saucer-price">$104</span></li>
+                                <li><span class="saucer-name">Quesadillas</span><span class="saucer-price">$30</span></li>
+                            </ol>
+                        </div>
+                        <div class="wraps-content section-menu">
+                            <h2>Wraps</h2>
+                            <ol>
+                                <li><span class="saucer-name">Estilo Oriental</span><span class="saucer-price">$102</span></li>
+                                <li><span class="saucer-name">De pechuga asada</span><span class="saucer-price">$109</span></li>
+                                <li><span class="saucer-name">De pescado</span><span class="saucer-price">$109</span></li>
+                                <li><span class="saucer-name">De arrachera</span><span class="saucer-price">$139</span></li>
+                                <li><span class="saucer-name">Vegetariano</span><span class="saucer-price">$109</span></li>
+                                <li><span class="saucer-name">De pollo estilo kentucky</span><span class="saucer-price">$109</span></li>
+                            </ol>
+                        </div>
+                        <div class="individual-content section-menu">
+                            <h2>
+                                Individuales
+                                <div class="note-include">
+                                    <span>(No incluyen: jugo. café, fruta ó gelatina)</span>
+                                </div>
+                            </h2>
+                            <ol>
+                                <li><span class="saucer-name">Cereal</span><span class="saucer-price">$48</span></li>
+                                <li><span class="saucer-name">Michas</span><span class="saucer-price">$37</span></li>
+                                <li><span class="saucer-name">Micha de pan francés</span><span class="saucer-price">$59</span></li>
+                                <li><span class="saucer-name">Micha de pan francés con durazno y arándano</span><span class="saucer-price">$68</span></li>
+                                <li><span class="saucer-name">Micha de pan dulce</span><span class="saucer-price">$14</span></li>
+                            </ol>
+                        </div>
+                        <div class="enchiladas-content section-menu">
+                            <h2>Enchiladas</h2>
+                            <ol>
+                                <li><span class="saucer-name">De plátano macho con mole</span><span class="saucer-price">$109</span></li>
+                                <li><span class="saucer-name">Suizas</span><span class="saucer-price">$109</span></li>
+                                <li><span class="saucer-name">Enfrijoladas</span><span class="saucer-price">$102</span></li>
+                                <li><span class="saucer-name">Verdes o Rojas</span><span class="saucer-price">$109</span></li>
+                                <li><span class="saucer-name">Enchiladas poblanas</span><span class="saucer-price">$109</span></li>
+                                <li><span class="saucer-name">De pollo con mole</span><span class="saucer-price">$112</span></li>
+                            </ol>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="slide">
-                <div class="intro">
-                    <img src="imgs/2.png" alt="Cool" />
-                    <h1>Cool</h1>
-                    <p>It just looks cool. Impress everybody with a simple and modern web design!</p>
+                <div class="intro intro-menu">
+                    <div class="title-section-menu">
+                        <h1>Sopas, Cremas & Pastas</h1>
+                    </div>
+                    <div class="content-options-menu midle-menu">
+                        <div class="soup-content section-menu">
+                            <h2>Sopas</h2>
+                            <ol>
+                                <li><span class="saucer-name">Azteca</span><span class="saucer-price">$69</span></li>
+                                <li><span class="saucer-name">Consome Ranchero</span><span class="saucer-price">$69</span></li>
+                                <li><span class="saucer-name">Tlalpeño</span><span class="saucer-price">$71</span></li>
+                                <li><span class="saucer-name">Huitlacoche</span><span class="saucer-price">$74</span></li>
+                                <li><span class="saucer-name">Milpa</span><span class="saucer-price">$71</span></li>
+                            </ol>
+                        </div>
+                        <div class="pastas-content section-menu">
+                            <h2>
+                                Pastas
+                                <div class="note-include">
+                                    <strong>Eligela a tu gusto</strong>
+                                    <span>Spaguetti, Fettuccinne y Fussilli</span>
+                                </div>
+                            </h2>
+                            <ol>
+                                <li><span class="saucer-name">Boloñesa</span><span class="saucer-price">$89</span></li>
+                                <li><span class="saucer-name">3 quesos</span><span class="saucer-price">$76</span></li>
+                                <li><span class="saucer-name">Al chipotle</span><span class="saucer-price">$86</span></li>
+                                <li><span class="saucer-name">Hawaiana</span><span class="saucer-price">$76</span></li>
+                                <li><span class="saucer-name">Con camarones (al olivo)</span><span class="saucer-price">$104</span></li>
+                                <li><span class="saucer-name">Lasagna a la boloñesa</span><span class="saucer-price">$99</span></li>
+                            </ol>
+                        </div>
+                        <div class="creme-content section-menu">
+                            <h2>
+                                Cremas
+                                <div class="note-include">
+                                    <span>Con guarnición de juliana de tortilla & queso panela</span>
+                                </div>
+                            </h2>
+                            <ol>
+                                <li><span class="saucer-name">Elote</span><span class="saucer-price">$69</span></li>
+                                <li><span class="saucer-name">Champiñones</span><span class="saucer-price">$69</span></li>
+                                <li><span class="saucer-name">Nuez</span><span class="saucer-price">$76</span></li>
+                                <li><span class="saucer-name">Zanahoria</span><span class="saucer-price">$69</span></li>
+                                <li><span class="saucer-name">Cilantro</span><span class="saucer-price">$69</span></li>
+                            </ol>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="slide">
-                <div class="intro">
-                    <img src="imgs/3.png" alt="Compatible" />
-                    <h1>Compatible</h1>
-                    <p>Working in modern and old browsers too! IE 8 users don't have the fault of using that horrible browser! Lets give them a chance to see your site in a proper way!</p>
+                <div class="intro intro-menu">
+                    <div class="title-section-menu">
+                            <h1>Mar & Tierra</h1>
+                    </div>
+                    <div class="content-options-menu large-menu">
+                        <div class="meat-content section-menu">
+                            <h2>
+                                Cortes & Parrilladas
+                                <div class="note-include">
+                                    <div>En estos cortes elige la guarnición de tu preferencia</div>
+                                    <strong>* Papa al horno * Gajos de papa * Papas con rajas</strong>
+                                </div>
+                            </h2>
+                            <ol>
+                                <li><span class="separator-saucer">Cortes</span></li>
+                                <li><span class="saucer-name">Arrachera Arriera</span><span class="saucer-price">$176</span></li>
+                                <li><span class="saucer-name">Rib Eyes</span><span class="saucer-price">$247</span></li>
+                                <li><span class="saucer-name">T-Bone</span><span class="saucer-price">$236</span></li>
+                                <li><span class="saucer-name">Cowboy</span><span class="saucer-price">$380</span></li>
+                                <li><span class="saucer-name">Tampiqueña de res</span><span class="saucer-price">$176</span></li>
+                                <li><span class="saucer-name">Alambre de res</span><span class="saucer-price">$119</span></li>
+                                <li><span class="saucer-name">Milanesa de res</span><span class="saucer-price">$125</span></li>
+                                <li><span class="saucer-name">Arrachera a la parrilla</span><span class="saucer-price">$176</span></li>
+                                <li><span class="separator-saucer">Parrilladas</span></li>
+                                <li><span class="saucer-name">Mixta</span><span class="saucer-price">$269</span></li>
+                                <li><span class="saucer-name">Especial</span><span class="saucer-price">$385</span></li>
+                            </ol>
+                        </div>
+                        <div class="fish-content section-menu">
+                            <h2>
+                                Pescado & Mariscos
+                                <div class="note-include">
+                                    <div>Cualquier filete de pescado va acompañado de arroz</div>
+                                </div>
+                            </h2>
+                            <ol>
+                                <li><span class="separator-saucer">Pescado</span></li>
+                                <li><span class="saucer-name">A la diabla</span><span class="saucer-price">$148</span></li>
+                                <li><span class="saucer-name">Empapelado</span><span class="saucer-price">$148</span></li>
+                                <li><span class="saucer-name">Empanizado</span><span class="saucer-price">$148</span></li>
+                                <li><span class="saucer-name">A la veracruzana</span><span class="saucer-price">$148</span></li>
+                                <li><span class="separator-saucer">Salmon</span></li>
+                                <li><span class="saucer-name">Salmon en salsa de neldo</span><span class="saucer-price">$220</span></li>
+                                <li><span class="saucer-name">Salmon con costra de morita</span><span class="saucer-price">$220</span></li>
+                                <li><span class="saucer-name">Salmon a las finas hierbas</span><span class="saucer-price">$220</span></li>
+                                <li><span class="saucer-name">Salmon a la crema de estragón</span><span class="saucer-price">$220</span></li>
+                                <li><span class="separator-saucer">Camarones</span></li>
+                                <li><span class="saucer-name">Camarones Panko</span><span class="saucer-price">$219</span></li>
+                                <li><span class="saucer-name">camarones a la diabla</span><span class="saucer-price">$219</span></li>
+                                <li><span class="saucer-name">Camarones al coco</span><span class="saucer-price">$219</span></li>
+                                <li><span class="saucer-name">Camarones al ajillo</span><span class="saucer-price">$219</span></li>
+                                <li><span class="separator-saucer">Atun</span></li>
+                                <li><span class="saucer-name">Atun sellado a la plancha</span><span class="saucer-price">$148</span></li>
+                                <li><span class="saucer-name">Atun en salsa de parmesano</span><span class="saucer-price">$168</span></li>
+                                <li><span class="saucer-name">Atun costrado con ajonjolí</span><span class="saucer-price">$168</span></li>
+                                <li><span class="saucer-name">Tostada de atun fresco</span><span class="saucer-price">$168</span></li>
+                            </ol>
+                        </div>
+                        <div class="chiken-content section-menu">
+                            <h2>Pollo</h2>
+                            <ol>
+                                <li><span class="saucer-name">Pechuga Appetizers</span><span class="saucer-price">$137</span></li>
+                                <li><span class="saucer-name">Pechuga tres quesos</span><span class="saucer-price">$128</span></li>
+                                <li><span class="saucer-name">Pechuga a la parrilla</span><span class="saucer-price">$123</span></li>
+                                <li><span class="saucer-name">Enchiladas de pollo</span><span class="saucer-price">$89</span></li>
+                                <li><span class="saucer-name">Milanezas de pollo</span><span class="saucer-price">$129</span></li>
+                                <li><span class="saucer-name">Alambre de pollo</span><span class="saucer-price">$126</span></li>
+                                <li><span class="saucer-name">Pollo con mole</span><span class="saucer-price">$129</span></li>
+                                <li><span class="saucer-name">Cordon blue de pollo</span><span class="saucer-price">$137</span></li>
+                                <li><span class="saucer-name">Pechuga a la parmesana</span><span class="saucer-price">$126</span></li>
+                                <li><span class="saucer-name">Pechuga a la plancha</span><span class="saucer-price">$126</span></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="intro intro-menu">
+                    <div class="title-section-menu">
+                        <h1>Hamburguesas & Baguettes</h1>
+                    </div>
+                    <div class="content-options-menu">
+                        <div class="hamburger-content section-menu">
+                            <h2>Hamburguesas</h2>
+                            <ol>
+                                <li><span class="saucer-name">Hawaiana</span><span class="saucer-price">$82</span></li>
+                                <li><span class="saucer-name">Texana</span><span class="saucer-price">$86</span></li>
+                                <li><span class="saucer-name">Finas Hierbas</span><span class="saucer-price">$86</span></li>
+                                <li><span class="saucer-name">De Arrachera</span><span class="saucer-price">$117</span></li>
+                                <li><span class="saucer-name">De pollo estilo kentucky</span><span class="saucer-price">$86</span></li>
+                                <li><span class="saucer-name">Argentina</span><span class="saucer-price">$94</span></li>
+                            </ol>
+                        </div>
+                        <div class="baguettes-content section-menu section-right">
+                            <h2>Baguettes</h2>
+                            <ol>
+                                <li><span class="saucer-name">De Pollo</span><span class="saucer-price">$112</span></li>
+                                <li><span class="saucer-name">De Arrachera</span><span class="saucer-price">$125</span></li>
+                                <li><span class="saucer-name">De Pierna</span><span class="saucer-price">$112</span></li>
+                                <li><span class="saucer-name">De jamon con queso</span><span class="saucer-price">$112</span></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="intro intro-menu">
+                    <div class="title-section-menu">
+                        <h1>Ensaladas</h1>
+                    </div>
+                    <div class="content-options-menu">
+                        <div class="salad-content section-menu section-center">
+                            <ol>
+                                <li><span class="saucer-name">Appetizers</span><span class="saucer-price">$93</span></li>
+                                <li><span class="saucer-name">Ensalada del chef</span><span class="saucer-price">$105</span></li>
+                                <li><span class="saucer-name">Pollo con mango</span><span class="saucer-price">$93</span></li>
+                                <li><span class="saucer-name">Antioxidante</span><span class="saucer-price">$101</span></li>
+                                <li><span class="saucer-name">Ensalada de atún</span><span class="saucer-price">$93</span></li>
+                                <li><span class="saucer-name">Ensalada de pera con queso de cabra</span><span class="saucer-price">$105</span></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="intro intro-menu">
+                    <div class="title-section-menu">
+                        <h1>Niños</h1>
+                    </div>
+                    <div class="content-options-menu">
+                        <div class="salad-content section-menu section-center">
+                            <ol>
+                                <li><span class="saucer-name">Consomé Infantil</span><span class="saucer-price">$41</span></li>
+                                <li><span class="saucer-name">Pollo kentucky</span><span class="saucer-price">$69</span></li>
+                                <li><span class="saucer-name">Tacos dorados de pollo</span><span class="saucer-price">$54</span></li>
+                                <li><span class="saucer-name">Hamburguesa Sencilla</span><span class="saucer-price">$68</span></li>
+                                <li><span class="saucer-name">Nuguettes de pollo</span><span class="saucer-price">$69</span></li>
+                                <li><span class="saucer-name">Salchipulpos con papas</span><span class="saucer-price">$59</span></li>
+                                <li><span class="saucer-name">Salchitacos con papas</span><span class="saucer-price">$59</span></li>
+                                <li><span class="saucer-name">Espaguetti a la hawaiana</span><span class="saucer-price">$60</span></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="intro intro-menu">
+                    <div class="title-section-menu">
+                        <h1>De nuestra barra</h1>
+                    </div>
+                    <div class="content-options-menu large-menu">
+                        <div class="soda-content section-menu">
+                            <h2>Sodas</h2>
+                            <ol>
+                                <li><span class="saucer-name">Soda Italiana</span><span class="saucer-price">$55</span></li>
+                                <li><span class="saucer-name">Refrescos</span><span class="saucer-price">$24</span></li>
+                                <li><span class="saucer-name">Fuze Tea</span><span class="saucer-price">$23</span></li>
+                                <li><span class="saucer-name">Powerade</span><span class="saucer-price">$25</span></li>
+                                <li><span class="saucer-name">Monster</span><span class="saucer-price">$40</span></li>
+                                <li><span class="saucer-name">Red Bull</span><span class="saucer-price">$40</span></li>
+                                <li><span class="saucer-name">Jugo del valle</span><span class="saucer-price">$23</span></li>
+                                <li><span class="saucer-name">Botella de agua</span><span class="saucer-price">$11</span></li>
+                            </ol>
+                        </div>
+                        <div class="cocktail-content section-menu">
+                            <h2>Cocteleria</h2>
+                            <ol>
+                                <li><span class="saucer-name">Piñada</span><span class="saucer-price">$53</span></li>
+                                <li><span class="saucer-name">Piña Colada</span><span class="saucer-price">$79</span></li>
+                                <li><span class="saucer-name">Sangria Naturals</span><span class="saucer-price">$58</span></li>
+                                <li><span class="saucer-name">Sangria Preparada</span><span class="saucer-price">$78</span></li>
+                                <li><span class="saucer-name">Margarita Tradicional</span><span class="saucer-price">$70</span></li>
+                                <li><span class="saucer-name">Margarita de sabor</span><span class="saucer-price">$76</span></li>
+                                <li><span class="saucer-name">Mojito</span><span class="saucer-price">$70</span></li>
+                                <li><span class="saucer-name">Medias de seda</span><span class="saucer-price">$70</span></li>
+                                <li><span class="saucer-name">Extasis</span><span class="saucer-price">$73</span></li>
+                                <li><span class="saucer-name">Piedra</span><span class="saucer-price">$52</span></li>
+                                <li><span class="saucer-name">Alfonso XIII</span><span class="saucer-price">$55</span></li>
+                                <li><span class="saucer-name">Bull</span><span class="saucer-price">$89</span></li>
+                                <li><span class="saucer-name">Beso de angel</span><span class="saucer-price">$56</span></li>
+                                <li><span class="saucer-name">Splash</span><span class="saucer-price">$70</span></li>
+                                <li><span class="saucer-name">Iguana</span><span class="saucer-price">$70</span></li>
+                                <li><span class="saucer-name">Blue Hawaii</span><span class="saucer-price">$70</span></li>
+                            </ol>
+                        </div>
+                        <div class="wine-content section-menu">
+                            <h2>Vino de mesa</h2>
+                            <ol>
+                                <li class="li-bottles">
+                                    <div class="bottle-name">Rinuite (tinto ó rosado)</div>
+                                    <div>
+                                        <span class="type-bottle">Botella 187 ml.</span><span class="bottle-price">$76</span>
+                                    </div>
+                                    <div>
+                                        <span class="type-bottle">Botella 750 ml.</span><span class="bottle-price">$290</span>
+                                    </div>
+                                </li>
+                                <li class="li-bottles">
+                                    <div class="bottle-name">Casillero del diablo</div>
+                                    <div>
+                                        <span class="type-bottle">Botella 250 ml.</span><span class="bottle-price">$113</span>
+                                        <span class="type-bottle">Botella 375 ml.</span><span class="bottle-price">$167</span>
+                                        <span class="type-bottle">Botella 750 ml.</span><span class="bottle-price">$325</span>
+                                    </div>
+                                </li>
+                                <li class="li-bottles">
+                                    <div class="bottle-name">X.A. Pedro Domec</div>
+                                    <div>
+                                        <span class="type-bottle">Botella 375 ml.</span><span class="bottle-price">$140</span>
+                                        <span class="type-bottle">Botella 750 ml.</span><span class="bottle-price">$275</span>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="beer-content section-menu">
+                            <h2>
+                                Cerveza
+                                <div class="note-include">
+                                    <strong>Cerveza de barril y de sabores</strong>
+                                    <div>(Con fruta natural de temporada)</div>
+                                </div>
+                            </h2>
+                            <ol>
+                                <li><span class="saucer-name">Stella Artois</span><span class="saucer-price">$40</span></li>
+                                <li><span class="saucer-name">Budweiser</span><span class="saucer-price">$40</span></li>
+                                <li><span class="saucer-name">Negra Modelo</span><span class="saucer-price">$38</span></li>
+                                <li><span class="saucer-name">Modelo Especial</span><span class="saucer-price">$38</span></li>
+                                <li><span class="saucer-name">Victoria, Corona, Leon, Montejo</span><span class="saucer-price">$32</span></li>
+                                <li><span class="saucer-name">Michelada</span><span class="saucer-price">por $8 pesos más</span></li>
+                                <li><span class="saucer-name">Michelada Cubana</span><span class="saucer-price">por $16 pesos más</span></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="intro intro-menu">
+                    <div class="title-section-menu">
+                        <h1>De nuestra barra</h1>
+                    </div>
+                    <div class="content-options-menu large-menu">
+                        <div class="Liquors-content section-menu-grid">
+                            <h2>Licores</h2>
+                            <ol>
+                                <li><span class="saucer-name">Baileys</span><span class="saucer-price">$70</span></li>
+                                <li><span class="saucer-name">Licor 43</span><span class="saucer-price">$70</span></li>
+                                <li><span class="saucer-name">Midori</span><span class="saucer-price">$68</span></li>
+                                <li><span class="saucer-name">Amareto</span><span class="saucer-price">$52</span></li>
+                                <li><span class="saucer-name">Anis Chinchon</span><span class="saucer-price">$52</span></li>
+                                <li><span class="saucer-name">Anis Domec</span><span class="saucer-price">$52</span></li>
+                                <li><span class="saucer-name">Menta Verde</span><span class="saucer-price">$45</span></li>
+                                <li><span class="saucer-name">Sambuca</span><span class="saucer-price">$83</span></li>
+                            </ol>
+                        </div>
+                        <div class="ron-content section-menu-grid">
+                            <h2>Ron</h2>
+                            <ol>
+                                <li><span class="saucer-name">Bacardi Blanco</span><span class="saucer-price">$56</span></li>
+                                <li><span class="saucer-name">Bacardi Añejo</span><span class="saucer-price">$57</span></li>
+                                <li><span class="saucer-name">Solera</span><span class="saucer-price">$59</span></li>
+                                <li><span class="saucer-name">Appleton Special</span><span class="saucer-price">$57</span></li>
+                                <li><span class="saucer-name">Appleton State</span><span class="saucer-price">$63</span></li>
+                                <li><span class="saucer-name">Malibu</span><span class="saucer-price">$57</span></li>
+                            </ol>
+                        </div>
+                        <div class="brandy-content section-menu-grid">
+                            <h2>Brandy</h2>
+                            <ol>
+                                <li><span class="saucer-name">Don Pedro</span><span class="saucer-price">$53</span></li>
+                                <li><span class="saucer-name">Azteca de Oro</span><span class="saucer-price">$68</span></li>
+                                <li><span class="saucer-name">Terry</span><span class="saucer-price">$75</span></li>
+                                <li><span class="saucer-name">Torres 10</span><span class="saucer-price">$93</span></li>
+                                <li><span class="saucer-name">Coñac Courvoiseirs</span><span class="saucer-price">$107</span></li>
+                            </ol>
+                        </div>
+                        <div class="whisky-content section-menu-grid">
+                            <h2>Whisky</h2>
+                            <ol>
+                                <li><span class="saucer-name">J.B</span><span class="saucer-price">$71</span></li>
+                                <li><span class="saucer-name">Johnny Walker E. Roja</span><span class="saucer-price">$82</span></li>
+                                <li><span class="saucer-name">Johnny Walker E. Negra</span><span class="saucer-price">$120</span></li>
+                                <li><span class="saucer-name">Chivas Regal</span><span class="saucer-price">$115</span></li>
+                                <li><span class="saucer-name">Jack Daniels</span><span class="saucer-price">$115</span></li>
+                            </ol>
+                        </div>
+                        <div class="vodka-content section-menu-grid">
+                            <h2>Vodka</h2>
+                            <ol>
+                                <li><span class="saucer-name">Smirnof</span><span class="saucer-price">$60</span></li>
+                                <li><span class="saucer-name">Wiworoba</span><span class="saucer-price">$60</span></li>
+                                <li><span class="saucer-name">Absolut Azul</span><span class="saucer-price">$120</span></li>
+                                <li><span class="saucer-name">Ginebra oso negro</span><span class="saucer-price">$55</span></li>
+                            </ol>
+                        </div>
+                        <div class="tequila-content section-menu-grid">
+                            <h2>Tequila</h2>
+                            <ol>
+                                <li><span class="saucer-name">Jimador</span><span class="saucer-price">$58</span></li>
+                                <li><span class="saucer-name">Cabrito Reposado</span><span class="saucer-price">$58</span></li>
+                                <li><span class="saucer-name">Cazadores Reposado</span><span class="saucer-price">$64</span></li>
+                                <li><span class="saucer-name">Herradura Reposado</span><span class="saucer-price">$105</span></li>
+                                <li><span class="saucer-name">Don Julio Reposado</span><span class="saucer-price">$105</span></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="intro intro-menu">
+                    <div class="title-section-menu">
+                        <h1>Fuente de Sodas</h1>
+                    </div>
+                    <div class="content-options-menu large-menu">
+                        <div class="desserts-content section-menu-grid">
+                            <h2>Postres</h2>
+                            <ol>
+                                <li><span class="saucer-name">Banana Split</span><span class="saucer-price">$53</span></li>
+                                <li><span class="saucer-name">Fresas con crema</span><span class="saucer-price">$53</span></li>
+                                <li><span class="saucer-name">Duraznos con crema</span><span class="saucer-price">$53</span></li>
+                                <li><span class="saucer-name">Arroz con leche</span><span class="saucer-price">$53</span></li>
+                                <li><span class="saucer-name">Pastel de 3 leches</span><span class="saucer-price">$53</span></li>
+                                <li><span class="saucer-name">Flan de elote</span><span class="saucer-price">$53</span></li>
+                                <li><span class="saucer-name">Buñuelos de manzana</span><span class="saucer-price">$53</span></li>
+                                <li><span class="saucer-name">Crepas</span><span class="saucer-price">$53</span></li>
+                            </ol>
+                        </div>
+                        <div class="smoothies-content section-menu-grid">
+                            <h2>Licuados</h2>
+                            <ol>
+                                <li><span class="saucer-name">Fresa</span><span class="saucer-price">$39</span></li>
+                                <li><span class="saucer-name">Platano</span><span class="saucer-price">$39</span></li>
+                                <li><span class="saucer-name">Chocomilk</span><span class="saucer-price">$39</span></li>
+                                <li><span class="saucer-name">Cereales</span><span class="saucer-price">$39</span></li>
+                            </ol>
+                        </div>
+                        <div class="juices-content section-menu-grid">
+                            <h2>Jugos & Agua de sabor</h2>
+                            <ol>
+                                <li><span class="separator-saucer">Jugos</span></li>
+                                <li><span class="saucer-name">Verde</span><span class="saucer-price">$22</span></li>
+                                <li><span class="saucer-name">Zanahoria</span><span class="saucer-price">$22</span></li>
+                                <li><span class="saucer-name">Naranja</span><span class="saucer-price">$22</span></li>
+                                <li><span class="separator-saucer">Agua de sabor</span></li>
+                                <li><span class="saucer-name">Jarra</span><span class="saucer-price">$72</span></li>
+                                <li><span class="saucer-name">1/2 Jarra</span><span class="saucer-price">$40</span></li>
+                                <li><span class="saucer-name">Copa</span><span class="saucer-price">$22</span></li>
+                                <li><span class="saucer-name">Jarra naranjada ó limonada</span><span class="saucer-price">$105</span></li>
+                                <li><span class="saucer-name">Copa naranjada ó limonada</span><span class="saucer-price">$29</span></li>
+                            </ol>
+                        </div>
+                        <div class="milkshakes-content section-menu-grid">
+                            <h2>Malteadas & Skimos</h2>
+                            <ol>
+                                <li><span class="separator-saucer">Malteadas</span></li>
+                                <li><span class="saucer-name">Vainlla</span><span class="saucer-price">$39</span></li>
+                                <li><span class="saucer-name">Fresa</span><span class="saucer-price">$39</span></li>
+                                <li><span class="saucer-name">Chocolate</span><span class="saucer-price">$39</span></li>
+                                <li><span class="separator-saucer">Skimos</span></li>
+                                <li><span class="saucer-name">Vainlla</span><span class="saucer-price">$39</span></li>
+                                <li><span class="saucer-name">Fresa</span><span class="saucer-price">$39</span></li>
+                                <li><span class="saucer-name">Chocolate</span><span class="saucer-price">$39</span></li>
+                                <li><span class="saucer-name">Nescafe</span><span class="saucer-price">$39</span></li>
+                            </ol>
+                        </div>
+                        <div class="coffe-content section-menu-grid">
+                            <h2>Café</h2>
+                            <ol>
+                                <li><span class="saucer-name">Café Americano</span><span class="saucer-price">$22</span></li>
+                                <li><span class="saucer-name">Capuccino Natural</span><span class="saucer-price">$30</span></li>
+                                <li><span class="saucer-name">Capuccino de sabor</span><span class="saucer-price">$37</span></li>
+                                <li><span class="saucer-name">Chocolate frio o caliente</span><span class="saucer-price">$38</span></li>
+                                <li><span class="saucer-name">Chocolate con malvavisco</span><span class="saucer-price">$40</span></li>
+                                <li><span class="saucer-name">Café Irlandes</span><span class="saucer-price">$49</span></li>
+                                <li><span class="saucer-name">Té</span><span class="saucer-price">$22</span></li>
+                                <li><span class="saucer-name">Latte</span><span class="saucer-price">$32</span></li>
+                                <li><span class="saucer-name">Moka</span><span class="saucer-price">$32</span></li>
+                                <li><span class="saucer-name">Express</span><span class="saucer-price">$30</span></li>
+                            </ol>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="section" id="section2" data-anchor="gallery">
             <div class="intro">
-                <h1>Example</h1>
-                <p>HTML markup example to define 4 sections.</p>
-                <img src="imgs/example2.png" alt="example" />
+                <h1>Galeria</h1>
             </div>
         </div>
-        <div class="section" id="section3" data-anchor="reservation">
-            <div class="intro">
-                <h1>Working On Tablets</h1>
-                <p>
-                    Designed to fit to different screen sizes as well as tablet and mobile devices.
-                    <br /><br /><br /><br /><br /><br />
-                </p>
+        <div class="section" id="section3" data-anchor="buffet">
+            <div class="panel-content-blur"></div>
+            <div class="intro intro-buffet">
+                <div class="title-section-menu">
+                    <h1>Buffet</h1>
+                </div>
+                <div class="subtitle-buffet">¡Déjate consentir con nuestro exquisito desayuno buffet!</div>
+                <div class="days-available">Sábados y domingos</div>
+                <div class="available-schedules">
+                    <div class="buffet-content price-buffet">
+                        <ol>
+                            <li><span class="saucer-name">Adulto</span><span class="saucer-price">$180</span></li>
+                            <li><span class="saucer-name">Niño (Hasta 12 años)</span><span class="saucer-price">$99</span></li>
+                        </ol>
+                    </div>
+                    <div class="hours-available">
+                        <div>De</div>
+                        <span>8:00 a.m. A 12:00 p.m</span>
+                    </div>
+                </div>
             </div>
-            <img src="imgs/tablets.png" alt="tablets" />
         </div>
-        <div class="section" id="section4" data-anchor="contact">
+        <div class="section" id="section4" data-anchor="reservation">
             <div class="intro">
-                <h1>Working On Tablets</h1>
-                <p>
-                    Designed to fit to different screen sizes as well as tablet and mobile devices.
-                    <br /><br /><br /><br /><br /><br />
-                </p>
+                <h1>Reservaciones</h1>
             </div>
-            <img src="imgs/tablets.png" alt="tablets" />
+        </div>
+        <div class="section" id="section5" data-anchor="contact">
+            <div class="intro">
+                <h1>Contacto</h1>
+            </div>
         </div>
     </div>
 
@@ -116,14 +626,14 @@
           <span class='hamburger'></span>
         </span>
         <ul>
-            <li class="item-menu" data-menuanchor="home"><a href="#home">Home</a></li>
-            <li class="item-menu" data-menuanchor="menu"><a href="#menu">Menu</a></li>
-            <li class="item-menu" data-menuanchor="gallery"><a href="#gallery">Gallery</a></li>
-            <li class="item-menu" data-menuanchor="reservation"><a href="#reservation">Reservation</a></li>
-            <li class="item-menu" data-menuanchor="contact"><a href="#contact">Contact</a></li>
+            <li class="item-menu" data-menuanchor="home"><a href="#home">Inicio</a></li>
+            <li class="item-menu" data-menuanchor="menu"><a href="#menu">Menú</a></li>
+            <li class="item-menu" data-menuanchor="gallery"><a href="#gallery">Nosotros</a></li>
+            <li class="item-menu" data-menuanchor="buffet"><a href="#buffet">Buffet</a></li>
+            <li class="item-menu" data-menuanchor="reservation"><a href="#reservation">Reservaciones</a></li>
+            <li class="item-menu" data-menuanchor="contact"><a href="#contact">Contacto</a></li>
         </ul>
     </label>
 
 </body>
-
 </html>
