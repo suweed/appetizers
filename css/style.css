@@ -161,13 +161,13 @@ label .hamburger {
 
 label .hamburger:after,
 label .hamburger:before {
-    transition: .5s ease-in-out;
     content: "";
     position: absolute;
     display: block;
     width: 100%;
     height: 100%;
     background: #000;
+    transition: .5s ease-in-out;
 }
 
 label .hamburger:before {
@@ -205,20 +205,53 @@ label input:checked+.menu .hamburger:before {
 }
 
 label input:checked+.menu+ul {
-    opacity: 1;
-    display: block;
-}
-
-label ul {
     z-index: 200;
     position: absolute;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    opacity: 0;
     transition: .25s 0s ease-in-out;
-    display: none;
+    
+    animation: fadein 2s;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 label a {
@@ -634,46 +667,26 @@ em::after {
   .title-gallery{
     margin-bottom: 5%;
   }
-  .row {
-    display: flex;
-    /*flex-wrap: wrap;*/
-    padding: 0 4px;
-  }
   
   .content-inside-section-gallery{
     width: 90%;
     margin: auto;
-    overflow: auto;
+    overflow-y: auto;
+    background-image: url("../img/dark_wood.png");
+    overflow-x: hidden;
   }
 
-  /* Create four equal columns that sits next to each other */
-  .column {
-    flex: 25%;
-    max-width: 25%;
-    padding: 0 4px;
-  }
-  
-  .column img {
-    margin-top: 8px;
-    vertical-align: middle;
-  }
-  
-  /* Responsive layout - makes a two column-layout instead of four columns */
-  @media screen and (max-width: 800px) {
-    .column {
-      flex: 50%;
-      max-width: 50%;
-    }
-  }
-  
-  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
-    .column {
-      flex: 100%;
-      max-width: 100%;
-    }
-  }
+  .boardz img {
+    max-width: 100%;
+    height: auto;
+}
 
+.content-img-select{
+    width: 80%;
+    height: 80%;
+    background-color: transparent;
+    margin: auto;
+}
   /* Style the Image Used to Trigger the Modal */
 #myImg {
     border-radius: 5px;
@@ -702,8 +715,7 @@ em::after {
 .modal-content {
     margin: auto;
     display: block;
-    width: 80%;
-    max-width: 700px;
+    height: 100%;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
