@@ -1,11 +1,15 @@
-$(document).ready(function() {
+$(document).ready(function () {
+
+    setTimeout(function(){
+        $(".cover-loading-page").addClass("fadeOutUp");
+    }, 2000);
 
     $('#fullpage').fullpage({
-        anchors: ['home', 'menu', 'gallery', 'buffet', 'reservation', 'contact'],
+        anchors: ['home', 'menu', 'gallery', 'buffet', 'contact'],
         menu: '#menu-fullpage',
         scrollingSpeed: 1000,
         normalScrollElements: '.scroll-active',
-        onLeave: function(index, nextIndex, direction) {
+        onLeave: function (index, nextIndex, direction) {
             var leavingSection = $(this);
             var tl2 = new TimelineMax();
             var titleContent = $(".title-content-home");
@@ -21,13 +25,13 @@ $(document).ready(function() {
 
             }
 
-            if(index == 2 && direction == "down"){
+            if (index == 2 && direction == "down") {
                 console.log("going to section 3");
 
             }
 
         },
-        afterLoad: function(anchorLink, index) {
+        afterLoad: function (anchorLink, index) {
             var loadedSection = $(this);
             var titleContent = $(".title-content-home");
             var tl = new TimelineMax();
@@ -35,17 +39,17 @@ $(document).ready(function() {
             if (index == 1) {
                 console.log("en section 1");
 
-                tl.fromTo(titleContent, 2, { bottom: -100 }, { top: 0, autoAlpha: 0.7 });
+                tl.fromTo(titleContent, 4, { bottom: -100 }, { top: 0, autoAlpha: 0.7 });
             }
 
-            if(index == 3){
+            if (index == 3) {
                 // Get the modal
                 var modal = document.getElementById('myModal');
                 // Get the image and insert it inside the modal - use its "alt" text as a caption
                 var img = $(".pick-select");
                 var modalImg = document.getElementById("img01");
                 var captionText = document.getElementById("caption");
-                img.click(function(){
+                img.click(function () {
                     modal.style.display = "block";
                     modalImg.src = this.src;
                     captionText.innerHTML = this.alt;
@@ -56,7 +60,7 @@ $(document).ready(function() {
                 var span = document.getElementsByClassName("close")[0];
 
                 // When the user clicks on <span> (x), close the modal
-                span.onclick = function() { 
+                span.onclick = function () {
                     modal.style.display = "none";
                     $("label .menu").show();
                 }
@@ -64,37 +68,37 @@ $(document).ready(function() {
         }
     });
 
-    $(window).resize(function(){
+    $(window).resize(function () {
         updateScrollingClasses();
     });
 
-    $(window).bind('mousewheel', function(){
+    $(window).bind('mousewheel', function () {
         updateScrollingClasses();
     });
 
     updateScrollingClasses();
 
-    $(".item-menu").click(function() {
+    $(".item-menu").click(function () {
         $(".hamburger").click();
     });
 
-    $(".slider-selector").click(function(){
+    $(".slider-selector").click(function () {
         var slide = $(this).attr("data-slide");
-        
+
         console.log(slide);
 
         $.fn.fullpage.moveTo('menu', slide);
     });
 });
 
-(function($) {
-    $.fn.hasScrollBar = function() {
+(function ($) {
+    $.fn.hasScrollBar = function () {
         return this.get(0).scrollHeight > this.height();
     }
 })(jQuery);
 
-function updateScrollingClasses(){
-    $('.section-main').each(function(index) {
+function updateScrollingClasses() {
+    $('.section-main').each(function (index) {
         var element = $(this);
         if (element.hasScrollBar()) {
             element.addClass('scroll-active');

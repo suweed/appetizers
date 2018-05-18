@@ -97,6 +97,74 @@ acronym {
     border: 0;
 }
 
+/**            COVER PAGE LADING
+ * --------------------------------------- */
+
+.cover-loading-page {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    z-index: 100;
+    display: block;
+    position: fixed;
+    font-family: qumpellka;
+    background-image: url(../img/loading-back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.title-cover-loading {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    font-size: 100px;
+    color: #5a5959;
+    top: 30%;
+    position: absolute;
+    text-shadow: 6px 6px 0px rgba(125, 119, 119, 0.45);
+}
+
+.lds-ripple {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+}
+
+.lds-ripple div {
+    position: absolute;
+    border: 4px solid seagreen;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+}
+
+@keyframes lds-ripple {
+    0% {
+        top: 28px;
+        left: 28px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        top: -1px;
+        left: -1px;
+        width: 58px;
+        height: 58px;
+        opacity: 0;
+    }
+}
 
 /* Custom CSS
  * --------------------------------------- */
@@ -127,7 +195,6 @@ p {
 .section {
     text-align: center;
 }
-
 
 /** Menu fullpage
  * -------------------------------------- */
@@ -212,46 +279,77 @@ label input:checked+.menu+ul {
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     transition: .25s 0s ease-in-out;
-    
     animation: fadein 2s;
-    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 2s; /* Firefox < 16 */
-        -ms-animation: fadein 2s; /* Internet Explorer */
-         -o-animation: fadein 2s; /* Opera < 12.1 */
+    -webkit-animation: fadein 2s;
+    /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s;
+    /* Firefox < 16 */
+    -ms-animation: fadein 2s;
+    /* Internet Explorer */
+    -o-animation: fadein 2s;
+    /* Opera < 12.1 */
 }
 
 @keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeOut {
-    from { opacity: 1; }
-    to   { opacity: 0; }
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
 /* Firefox < 16 */
+
 @-moz-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
+
 @-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Internet Explorer */
+
 @-ms-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Opera < 12.1 */
+
 @-o-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 label a {
@@ -261,11 +359,12 @@ label a {
     text-decoration: none;
 }
 
-.item-menu a{
+.item-menu a {
     font-family: 'qumpellka', serif;
     font-size: 30px;
 }
-.item-menu a:hover{
+
+.item-menu a:hover {
     text-decoration: underline;
 }
 
@@ -299,12 +398,14 @@ label a {
 }
 
 /* Thin scroll-bar to match the rest of the theme */
+
 .section-main::-webkit-scrollbar {
     width: 8px;
     cursor: pointer;
 }
 
 /* Track */
+
 .section-main::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 9px rgba(0, 0, 0, 0.3);
     background: white;
@@ -312,6 +413,7 @@ label a {
 }
 
 /* Handle */
+
 .section-main::-webkit-scrollbar-thumb {
     background: seagreen;
     cursor: pointer;
@@ -322,6 +424,45 @@ label a {
     background: seagreen;
     cursor: pointer;
 }
+
+/**       ANIMATED     
+ * ---------------------------------------------- */
+
+ .animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+ @-webkit-keyframes fadeOutUp {
+    from {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+  }
+  
+  @keyframes fadeOutUp {
+    from {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+  }
+  
+  .fadeOutUp {
+    -webkit-animation-name: fadeOutUp;
+    animation-name: fadeOutUp;
+  }
 
 /**
  Section 0 - HOME
@@ -397,7 +538,6 @@ em::after {
     color: #fff;
 }
 
-
 /** Section 1 - MENU
  * ------------------------------------------- */
 
@@ -467,7 +607,7 @@ em::after {
     transform: scale(1.08, 1) rotateX(0deg) rotateY(40deg) rotateZ(0deg) skew(0deg, 22deg);
 }
 
-.intro h1{
+.intro h1 {
     font-family: 'qumpellka', serif;
     font-size: 60px;
 }
@@ -478,50 +618,51 @@ em::after {
     margin: auto;
     position: relative;
 }
-.section-menu{
+
+.section-menu {
     position: relative;
     float: left;
     width: 33%;
     height: 100%;
 }
 
-.section-menu-grid{
+.section-menu-grid {
     position: relative;
     float: left;
     width: 33%;
     height: 300px;
 }
 
-.section-menu ol{
+.section-menu ol {
     font-size: 20px;
     text-align: left;
     padding: 15px;
 }
 
-.section-menu ol li{
+.section-menu ol li {
     width: 100%;
     height: 25px;
 }
 
-.section-menu-grid ol{
+.section-menu-grid ol {
     font-size: 20px;
     text-align: left;
     padding: 15px;
 }
 
-.section-menu-grid ol li{
+.section-menu-grid ol li {
     width: 100%;
     height: 25px;
 }
 
-.slider-selector{
+.slider-selector {
     cursor: pointer;
 }
 
-.slider-selector:hover{
+.slider-selector:hover {
     color: seagreen;
-
 }
+
 .content-options-menu {
     top: 20%;
     position: relative;
@@ -530,10 +671,11 @@ em::after {
     height: auto;
 }
 
-.middle-menu{
+.middle-menu {
     top: 10%;
 }
-.large-menu{
+
+.large-menu {
     top: 5%;
 }
 
@@ -551,44 +693,56 @@ em::after {
     color: seagreen;
 }
 
-.section-right{
+.section-right {
     float: right;
 }
-.section-center{
+
+.section-center {
     text-align: center;
     margin: auto;
     float: none;
 }
-.note-include{
+
+.note-include {
     font-size: 12px;
 }
 
-.separator-saucer, .bottle-name{
+.separator-saucer,
+.bottle-name {
     color: #000;
 }
-.saucer-name, .type-bottle{
+
+.saucer-name,
+.type-bottle {
     float: left;
 }
-.saucer-price, .bottle-price{
+
+.saucer-price,
+.bottle-price {
     float: right;
 }
-.li-bottles{
+
+.li-bottles {
     height: 70px !important;
 }
-.type-bottle, .bottle-price{
+
+.type-bottle,
+.bottle-price {
     width: 50%;
 }
-.bottle-price{
+
+.bottle-price {
     text-align: right;
 }
 
 /** buffet
  *------------------------------------------------------------------ */
-#section3{
+
+#section3 {
     background-image: url("../img/breakfast-buffet.jpeg");
 }
 
-.panel-content-blur{
+.panel-content-blur {
     width: 100%;
     height: 50%;
     position: absolute;
@@ -603,55 +757,56 @@ em::after {
     /*filter: blur(100px);*/
     filter: blur(5px);
 }
- .intro-buffet{
+
+.intro-buffet {
     width: 80%;
     margin: auto;
     position: relative;
- }
+}
 
- .subtitle-buffet{
+.subtitle-buffet {
     font-size: 25px;
     height: 100px;
     line-height: 100px;
     color: #000;
- }
+}
 
- .available-schedules{
+.available-schedules {
     width: 100%;
     height: 100%;
     margin-top: 5%;
     position: relative;
     display: block;
- }
+}
 
- .days-available{
+.days-available {
     height: 80px;
     font-size: 30px;
     color: #e85b15;
     line-height: 80px;
     text-align: center;
- }
+}
 
- .price-buffet{
+.price-buffet {
     position: relative;
     float: left;
     width: 50%;
     height: 100%;
     color: #000;
- }
+}
 
- .price-buffet ol{
+.price-buffet ol {
     font-size: 20px;
     text-align: left;
     padding: 15px;
 }
 
-.price-buffet ol li{
+.price-buffet ol li {
     width: 100%;
     height: 25px;
 }
 
- .hours-available{
+.hours-available {
     width: 50%;
     position: relative;
     height: 100%;
@@ -659,46 +814,53 @@ em::after {
     font-size: 20px;
     line-height: 40px;
     color: #000;
- }
+}
 
- /** ******************************************
+/** ******************************************
         Section - GALLERY
   * ******************************************* */
-  .title-gallery{
+
+.title-gallery {
     margin-bottom: 5%;
-  }
-  
-  .content-inside-section-gallery{
+}
+
+.content-inside-section-gallery {
     width: 90%;
     margin: auto;
     overflow-y: auto;
     background-image: url("../img/dark_wood.png");
     overflow-x: hidden;
-  }
+}
 
-  .boardz img {
+.boardz img {
     max-width: 100%;
     height: auto;
 }
 
-.content-img-select{
+.content-img-select {
     width: 80%;
     height: 80%;
     background-color: transparent;
     margin: auto;
 }
-  /* Style the Image Used to Trigger the Modal */
+
+/* Style the Image Used to Trigger the Modal */
+
 #myImg {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
 }
 
-#myImg:hover {opacity: 0.7;}
+#myImg:hover {
+    opacity: 0.7;
+}
 
 /* The Modal (background) */
+
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
+    /* Hidden by default */
     position: absolute;
     z-index: 108;
     padding-top: 100px;
@@ -707,11 +869,12 @@ em::after {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 /* Modal Content (Image) */
+
 .modal-content {
     margin: auto;
     display: block;
@@ -719,6 +882,7 @@ em::after {
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
+
 #caption {
     margin: auto;
     display: block;
@@ -731,17 +895,24 @@ em::after {
 }
 
 /* Add Animation - Zoom in the Modal */
-.modal-content, #caption { 
+
+.modal-content,
+#caption {
     animation-name: zoom;
     animation-duration: 0.6s;
 }
 
 @keyframes zoom {
-    from {transform:scale(0)} 
-    to {transform:scale(1)}
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
 }
 
 /* The Close Button */
+
 .close {
     position: absolute;
     top: 15px;
@@ -760,7 +931,8 @@ em::after {
 }
 
 /* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
+
+@media only screen and (max-width: 700px) {
     .modal-content {
         width: 100%;
     }
