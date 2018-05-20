@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     setTimeout(function() {
         $(".cover-loading-page").addClass("fadeOutUp");
-    }, 2000);
+    }, 3000); 
 
     $('#fullpage').fullpage({
         anchors: ['home', 'menu', 'gallery', 'buffet', 'contact'],
@@ -19,7 +19,8 @@ $(document).ready(function() {
                 console.log("Going to section 2!");
 
                 tl2.to(titleContent, 2, { top: 100, bottom: 0, autoAlpha: 0 });
-
+                init_grid_moments();
+                
             } else if (index == 2 && direction == 'up') {
                 console.log("Going to section 1!");
 
@@ -28,6 +29,7 @@ $(document).ready(function() {
             if (index == 2 && direction == "down") {
                 console.log("going to section 3");
 
+                init_grid_moments();
             }
 
         },
@@ -43,6 +45,7 @@ $(document).ready(function() {
             }
 
             if (index == 3) {
+
                 // Get the modal
                 var modal = document.getElementById('myModal');
                 // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -89,6 +92,7 @@ $(document).ready(function() {
 
         $.fn.fullpage.moveTo('menu', slide);
     });
+
 });
 
 (function($) {
@@ -110,14 +114,24 @@ function updateScrollingClasses() {
 
 function initMap() {
     var uluru = { lat: 19.404108, lng: -98.996918 };
+    var image = {
+        //Icon made by Flaticon Basic License from www.flaticon.com
+        url: 'https://image.flaticon.com/icons/svg/817/817382.svg',
+        // This marker is 20 pixels wide by 32 pixels high.
+        //size: new google.maps.Size(32, 32),
+        // The origin for this image is (0, 0).
+        origin: new google.maps.Point(0, 0),
+        // The anchor for this image is the base of the flagpole at (0, 32).
+        //anchor: new google.maps.Point(0, 50)
+      };
+
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 20,
         center: uluru,
-        icon: image,
         styles: [
             { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
             { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
-            { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] },
+            { elementType: 'labels.text.fill', stylers: [{ color: '#66BB6A' }] },
             {
                 featureType: 'administrative.locality',
                 elementType: 'labels.text.fill',
@@ -198,6 +212,17 @@ function initMap() {
     });
     var marker = new google.maps.Marker({
         position: uluru,
-        map: map
+        map: map,
+        icon: image,
+        animation: google.maps.Animation.DROP,
     });
+    marker.addListener('click', toggleBounce);
 }
+
+function toggleBounce() {
+    if (marker.getAnimation() !== null) {
+      marker.setAnimation(null);
+    } else {
+      marker.setAnimation(google.maps.Animation.BOUNCE);
+    }
+  }
