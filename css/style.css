@@ -960,14 +960,13 @@ em::after {
     position: absolute;
     top: 30%;
     left: 0;
-    background-color: #ffe4f7ad;
+    background-color: #000000d6;
     margin: auto;
-    background-image: url(../img/buffete-background.jpg);
+    /* background-image: url(../img/buffete-background.jpg); */
     background-size: cover;
     background-position: center;
-    display: block;
-    /*filter: blur(100px);*/
-    filter: blur(20px);
+    /* filter: blur(100px); */
+    filter: blur(100px);
     color: #ffffff;
 }
 
