@@ -111,10 +111,10 @@ acronym {
     display: block;
     position: fixed;
     font-family: qumpellka;
-    background-image: url(../img/loading-back.jpg);
+   /* background-image: url(../img/loading-back.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center;*/
 }
 
 .title-cover-loading {
@@ -139,210 +139,33 @@ acronym {
     color: #333;
     opacity: .75;
     animation: pulse 2.5s linear infinite;
+}
+
+.spinner div {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    background-color: #66BB6A;
+    border-radius: 50%;
+    animation: move 4s infinite cubic-bezier(.2,.64,.81,.23);
+  }
+  .spinner div:nth-child(2) {
+    animation-delay: 150ms;
+  }
+  .spinner div:nth-child(3) {
+    animation-delay: 300ms;
+  }
+  .spinner div:nth-child(4) {
+    animation-delay: 450ms;
+  }
+  @keyframes move {
+    0% {left: 0%;}
+    75% {left:100%;}
+    100% {left:100%;}
   }
   
-  #cooking {
-    position: relative;
-    margin: 0 auto;
-    top: 0;
-    width: 75vh;
-    height: 75vh;
-    overflow: hidden;
-  }
-  #cooking .bubble {
-    position: absolute;
-    border-radius: 100%;
-    box-shadow: 0 0 0.25vh #4d4d4d;
-    opacity: 0;
-  }
-  #cooking .bubble:nth-child(1) {
-    margin-top: 2.5vh;
-    left: 58%;
-    width: 2.5vh;
-    height: 2.5vh;
-    background-color: #454545;
-    animation: bubble 2s cubic-bezier(0.53, 0.16, 0.39, 0.96) infinite;
-  }
-  #cooking .bubble:nth-child(2) {
-    margin-top: 3vh;
-    left: 52%;
-    width: 2vh;
-    height: 2vh;
-    background-color: #3d3d3d;
-    animation: bubble 2s ease-in-out .35s infinite;
-  }
-  #cooking .bubble:nth-child(3) {
-    margin-top: 1.8vh;
-    left: 50%;
-    width: 1.5vh;
-    height: 1.5vh;
-    background-color: #333;
-    animation: bubble 1.5s cubic-bezier(0.53, 0.16, 0.39, 0.96) 0.55s infinite;
-  }
-  #cooking .bubble:nth-child(4) {
-    margin-top: 2.7vh;
-    left: 56%;
-    width: 1.2vh;
-    height: 1.2vh;
-    background-color: #2b2b2b;
-    animation: bubble 1.8s cubic-bezier(0.53, 0.16, 0.39, 0.96) 0.9s infinite;
-  }
-  #cooking .bubble:nth-child(5) {
-    margin-top: 2.7vh;
-    left: 63%;
-    width: 1.1vh;
-    height: 1.1vh;
-    background-color: #242424;
-    animation: bubble 1.6s ease-in-out 1s infinite;
-  }
-  #cooking #area {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 50%;
-    height: 50%;
-    background-color: transparent;
-    transform-origin: 15% 60%;
-    animation: flip 2.1s ease-in-out infinite;
-  }
-  #cooking #area #sides {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transform-origin: 15% 60%;
-    animation: switchSide 2.1s ease-in-out infinite;
-  }
-  #cooking #area #sides #handle {
-    position: absolute;
-    bottom: 18%;
-    right: 80%;
-    width: 35%;
-    height: 20%;
-    background-color: transparent;
-    border-top: 1vh solid #333;
-    border-left: 1vh solid transparent;
-    border-radius: 100%;
-    transform: rotate(20deg) rotateX(0deg) scale(1.3, 0.9);
-  }
-  #cooking #area #sides #pan {
-    position: absolute;
-    bottom: 20%;
-    right: 30%;
-    width: 50%;
-    height: 8%;
-    background-color: #333;
-    border-radius: 0 0 1.4em 1.4em;
-    transform-origin: -15% 0;
-  }
-  #cooking #area #pancake {
-    position: absolute;
-    top: 24%;
-    width: 100%;
-    height: 100%;
-    transform: rotateX(85deg);
-    animation: jump 2.1s ease-in-out infinite;
-  }
-  #cooking #area #pancake #pastry {
-    position: absolute;
-    bottom: 26%;
-    right: 37%;
-    width: 40%;
-    height: 45%;
-    background-color: #333;
-    box-shadow: 0 0 3px 0 #333;
-    border-radius: 100%;
-    transform-origin: -20% 0;
-    animation: fly 2.1s ease-in-out infinite;
-  }
-  
-  @keyframes jump {
-    0% {
-      top: 24%;
-      transform: rotateX(85deg);
-    }
-    25% {
-      top: 10%;
-      transform: rotateX(0deg);
-    }
-    50% {
-      top: 30%;
-      transform: rotateX(85deg);
-    }
-    75% {
-      transform: rotateX(0deg);
-    }
-    100% {
-      transform: rotateX(85deg);
-    }
-  }
-  @keyframes flip {
-    0% {
-      transform: rotate(0deg);
-    }
-    5% {
-      transform: rotate(-27deg);
-    }
-    30%,
-    50% {
-      transform: rotate(0deg);
-    }
-    55% {
-      transform: rotate(27deg);
-    }
-    83.3% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
-  }
-  @keyframes switchSide {
-    0% {
-      transform: rotateY(0deg);
-    }
-    50% {
-      transform: rotateY(180deg);
-    }
-    100% {
-      transform: rotateY(0deg);
-    }
-  }
-  @keyframes fly {
-    0% {
-      bottom: 26%;
-      transform: rotate(0deg);
-    }
-    10% {
-      bottom: 40%;
-    }
-    50% {
-      bottom: 26%;
-      transform: rotate(-190deg);
-    }
-    80% {
-      bottom: 40%;
-    }
-    100% {
-      bottom: 26%;
-      transform: rotate(0deg);
-    }
-  }
-  @keyframes bubble {
-    0% {
-      transform: scale(0.15, 0.15);
-      top: 80%;
-      opacity: 0;
-    }
-    50% {
-      transform: scale(1.1, 1.1);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(0.33, 0.33);
-      top: 60%;
-      opacity: 0;
-    }
-  }
   @keyframes pulse {
     0% {
       transform: scale(1, 1);
@@ -357,6 +180,9 @@ acronym {
       opacity: .25;
     }
   }
+  
+
+
 
 /* Custom CSS
  * --------------------------------------- */
@@ -585,11 +411,9 @@ label a {
 }
 
 .section-main {
-    height: 600px;
     width: 100%;
     margin-bottom: 10px;
     overflow-y: auto;
-    color: white;
     padding-right: 10px;
     overflow-x: hidden;
     border: 1px solid white;
@@ -769,6 +593,105 @@ em::after {
     bottom: 0;
     top: 20%;
   }
+
+  #section2 a {
+    padding-top: 70px;
+  }
+  #section2 a span {
+    position: absolute;
+    left: 2%;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #000;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-animation: sdb05 1.5s infinite;
+    animation: sdb05 1.5s infinite;
+    box-sizing: border-box;
+  }
+  #section2 a .up {
+    position: absolute;
+    left: 2%;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #000;
+    -webkit-transform: rotate(-225deg);
+    transform: rotate(-225deg);
+    -webkit-animation: sdb05up 1.5s infinite;
+    animation: sdb05up 1.5s infinite;
+    box-sizing: border-box;
+  }
+  .arrow-gallery-up{
+    position: relative;
+    color: #000;
+    bottom: 0;
+    top: 50px;
+    right: 0;
+  }
+  .arrow-gallery-down{
+    position: relative;
+    color: #000;
+    bottom: 0;
+    top: -50px;
+    right: 0;
+  }
+
+  #section1 a {
+    padding-top: 70px;
+  }
+  #section1 a span {
+    position: absolute;
+    left: 10%;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #000;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-animation: sdb05 1.5s infinite;
+    animation: sdb05 1.5s infinite;
+    box-sizing: border-box;
+  }
+  #section1 a .up {
+    position: absolute;
+    left: 10%;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #000;
+    -webkit-transform: rotate(-225deg);
+    transform: rotate(-225deg);
+    -webkit-animation: sdb05up 1.5s infinite;
+    animation: sdb05up 1.5s infinite;
+    box-sizing: border-box;
+  }
+
+  .arrow-menu{
+      display: none;
+      z-index: 2;
+  }
+
+  .arrow-menu-up{
+    position: relative;
+    color: #000;
+    bottom: 0;
+    top: 50px;
+    right: 0;
+  }
+  .arrow-menu-down{
+    position: relative;
+    color: #000;
+    bottom: 0;
+    top: -80px;
+    right: 0;
+  }
+  
   @-webkit-keyframes sdb05 {
     0% {
       -webkit-transform: rotate(-45deg) translate(0, 0);
@@ -792,6 +715,32 @@ em::after {
     }
     100% {
       transform: rotate(-45deg) translate(-20px, 20px);
+      opacity: 0;
+    }
+  }
+  @-webkit-keyframes sdb05up {
+    0% {
+      -webkit-transform: rotate(-225deg) translate(0, 0);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: rotate(-225deg) translate(-20px, 20px);
+      opacity: 0;
+    }
+  }
+  @keyframes sdb05up {
+    0% {
+      transform: rotate(-225deg) translate(0, 0);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(-225deg) translate(-20px, 20px);
       opacity: 0;
     }
   }
@@ -1219,7 +1168,7 @@ em::after {
  * ------------------------------------------------ */
 
 .intro-maps {
-    width: 20%;
+    width: 30%;
     height: auto;
     position: absolute;
     top: 10%;
@@ -1247,4 +1196,308 @@ em::after {
 
 .phone {
     margin-top: 15px;
+}
+
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+    /* Styles */
+    .cover-loading-page h1 {
+        width: 80% !important;
+    }
+
+    /*#cooking {
+        width: 100% !important;
+    }
+
+    #cooking #area {
+        right: 10% !important;
+    }*/
+
+    .heading {
+        font-size: .5em !important;
+    }
+
+    label .menu {
+        right: -120px;
+        top: -120px;
+    }
+
+    label .hamburger {
+        top: 150px;
+        left: 40px;
+    }
+
+    .title-content-home {
+        height: 100%;
+       /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0c0c0c+50,000000+100&0+0,0.6+11,1+37,1+68,0.48+91,0+100 */
+        background: -moz-linear-gradient(top, rgba(12,12,12,0) 0%, rgba(12,12,12,0.6) 11%, rgba(12,12,12,1) 37%, rgba(12,12,12,1) 50%, rgba(8,8,8,1) 68%, rgba(2,2,2,0.48) 91%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(12,12,12,0) 0%,rgba(12,12,12,0.6) 11%,rgba(12,12,12,1) 37%,rgba(12,12,12,1) 50%,rgba(8,8,8,1) 68%,rgba(2,2,2,0.48) 91%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(12,12,12,0) 0%,rgba(12,12,12,0.6) 11%,rgba(12,12,12,1) 37%,rgba(12,12,12,1) 50%,rgba(8,8,8,1) 68%,rgba(2,2,2,0.48) 91%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000c0c0c', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+    }
+
+    .sandbox-correct-pronounciation {
+        height: 100%;
+    }    
+    
+    .heading {
+        top: 50%;
+    }
+
+    .subheading {
+        margin-top: 80%;
+    }
+
+    .letter{
+        font-size: 3em;
+    }
+
+    .slider-selector {  
+        display: block;
+    }
+
+    .fa{
+        display: none;
+    }
+
+    .intro-menu {
+        width: 100%;
+        height: 80%;
+    }
+
+    .intro h1 {
+        font-size: 25px;
+    }
+
+    .note-include {
+        font-size: 12px;
+    }
+
+    .content-options-menu {
+        width: 95%;
+        height: 360px;
+        overflow: auto;
+        margin: auto;
+        top: 5%;
+    }
+
+    .section-menu {
+        float: left;
+        width: 100%;
+        height: auto;
+    }
+
+    .section-menu-grid {
+        float: left;
+        width: 100%;
+        height: auto;
+    }
+
+    .section-menu ol {
+        font-size: 100%;
+    }
+
+    .section-menu ol li {
+        width: 100%;
+        height: 20px;
+    }
+
+    .section-menu-grid ol {
+        font-size: 100%;
+    }
+
+    .section-menu-grid ol li {
+        width: 100%;
+        height: 20px;
+    }
+
+    .saucer-name, .type-bottle {
+        font-size: 12px;
+    }
+
+    .fp-controlArrow.fp-prev {
+        left: 70%;
+        top: 90%;
+    }
+
+    .fp-controlArrow.fp-next {
+        top: 90%;
+    }
+
+    #section2 a {
+        padding-top: 15px;
+    }
+
+    #section2 a .up {
+        left: 10%;
+    }
+    #section2 a span {
+        left: 10%;
+    }
+    .content--center {
+        height: 430px;
+    }
+    .arrow-gallery-down {
+        top: -20px;
+    }
+    .arrow-gallery-up {
+        top: 0;
+    }
+    .section-main {
+        padding-right: 0;
+    }
+    .panel-content-blur {
+        height: 70%;
+        top: 15%;
+        filter: blur(5px);
+    }
+    .intro-buffet {
+        width: 80%;
+        margin: auto;
+        position: relative;
+        color: #fff;
+    }
+    .title-section-buffet{
+        font-size: 35px;
+    }
+    .subtitle-buffet {
+        font-size: 20px;
+        height: auto;
+        line-height: 30px;
+    }
+    .price-buffet {
+        width: 100%;
+    }
+    .days-available {
+        height: auto;
+        font-size: 30px;
+        line-height: 35px;
+    }
+    .available-schedules .saucer-name{
+        font-size: 15px;
+    }
+
+    .hours-available {
+        width: 100%;
+    }
+
+    .intro-maps {
+        width: 80%;
+        top: 65%;
+        left: 0;
+        bottom: 0;
+    }
+
+    .direction {
+        font-size: 20px;
+    }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px) {
+    /* Styles */
+    .intro-menu {
+        width: 100%;
+        height: 80%;
+    }
+
+    .intro h1 {
+        font-size: 25px;
+    }
+
+    .note-include {
+        font-size: 12px;
+    }
+
+    .content-options-menu {
+        width: 85%;
+        height: 360px;
+        overflow: auto;
+        margin: auto;
+        top: 5%;
+    }
+
+    .section-menu {
+        float: none;
+        width: 80%;
+        height: auto;
+        margin: auto;
+    }
+
+    .section-menu-grid {
+        float: left;
+        width: 100%;
+        height: auto;
+    }
+
+    .section-menu ol {
+        font-size: 100%;
+    }
+
+    .section-menu ol li {
+        width: 100%;
+        height: 20px;
+    }
+
+    .section-menu-grid ol {
+        font-size: 100%;
+    }
+
+    .section-menu-grid ol li {
+        width: 100%;
+        height: 20px;
+    }
+
+    .saucer-name, .type-bottle {
+        font-size: 12px;
+    }
+
+    .panel-content-blur {
+        height: 70%;
+        top: 20%;
+        filter: blur(10px);
+    }
+
+    .subtitle-buffet {
+        height: auto;
+        line-height: 2;
+    }
+
+    .intro-maps {
+        width: 45%;
+        top: 60%;
+        left: 1%;
+    }
+}
+
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px)
+and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px)
+and (orientation : portrait) {
+/* Styles */
 }

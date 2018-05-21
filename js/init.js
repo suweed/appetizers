@@ -1,8 +1,29 @@
-$(document).ready(function() {
+var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
 
+$(document).ready(function() {
+   
     setTimeout(function() {
         $(".cover-loading-page").addClass("fadeOutUp");
-    }, 3000); 
+    }, 4000);
 
     $('#fullpage').fullpage({
         anchors: ['home', 'menu', 'gallery', 'buffet', 'contact'],
@@ -16,20 +37,19 @@ $(document).ready(function() {
 
             //after leaving section 1
             if (index == 1 && direction == 'down') {
-                console.log("Going to section 2!");
-
                 tl2.to(titleContent, 2, { top: 100, bottom: 0, autoAlpha: 0 });
                 init_grid_moments();
                 
             } else if (index == 2 && direction == 'up') {
-                console.log("Going to section 1!");
 
             }
 
             if (index == 2 && direction == "down") {
-                console.log("going to section 3");
-
                 init_grid_moments();
+            }
+
+            if(index == 3 && direction == "up"){
+                $(".grid--type-").addClass("grid--hidden");
             }
 
         },
@@ -39,9 +59,21 @@ $(document).ready(function() {
             var tl = new TimelineMax();
 
             if (index == 1) {
-                console.log("en section 1");
 
                 tl.fromTo(titleContent, 4, { bottom: -100 }, { top: 0, autoAlpha: 0.7 });
+
+                if(isMobile.any()){
+                    $("#home-video").hide();
+                    $("#section0").css('background-image', 'url(img/background-mobile-home.jpg)');
+                }
+                
+            }
+
+            if(index == 2){
+                if(isMobile.any()){
+                    $(".arrow-menu").show();
+                    $("#section1").addClass("scroll-active");
+                }
             }
 
             if (index == 3) {
@@ -87,12 +119,21 @@ $(document).ready(function() {
 
     $(".slider-selector").click(function() {
         var slide = $(this).attr("data-slide");
-
-        console.log(slide);
-
         $.fn.fullpage.moveTo('menu', slide);
     });
 
+    $("#up-gallery").click(function(){
+        $.fn.fullpage.moveSectionUp();
+    });
+    $("#down-gallery").click(function(){
+        $.fn.fullpage.moveSectionDown();
+    });
+    $("#up-menu").click(function(){
+        $.fn.fullpage.moveSectionUp();
+    });
+    $("#down-menu").click(function(){
+        $.fn.fullpage.moveSectionDown();
+    });
 });
 
 (function($) {
@@ -124,9 +165,14 @@ function initMap() {
         // The anchor for this image is the base of the flagpole at (0, 32).
         //anchor: new google.maps.Point(0, 50)
       };
+    var zoomMap = 20;
+
+    if(isMobile.any()){
+        zoomMap = 17;
+    }
 
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 20,
+        zoom: zoomMap,
         center: uluru,
         styles: [
             { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },

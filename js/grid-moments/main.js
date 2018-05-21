@@ -27,7 +27,28 @@
                     },
                     scale: [0,1]	
                 }
-            }
+            },
+            'Satet': {
+                animeOpts: {
+                    duration: 800,
+                    elasticity: 600,
+                    delay: function(t,i) {
+                        return i*100;
+                    },
+                    opacity: {
+                        value: [0,1],
+                        duration: 600,
+                        easing: 'linear'
+                    },
+                    scaleX: {
+                        value: [0.4,1]
+                    },
+                    scaleY: {
+                        value: [0.6,1],
+                        duration: 1000
+                    }
+                }
+            },
         };
     
         GridLoaderFx.prototype._render = function(effect) {
@@ -141,14 +162,18 @@
             // Switch grid radio buttons.
             switchGridCtrls = ["grid--type-c"],
             // Choose effect buttons.
-            fxCtrls = ["Hapi"],
+            fxCtrls = ["Satet"],
             // The GridLoaderFx instances.
             loaders = [],
             loadingTimeout;
 
     function init_grid_moments() {
+
+        // Hide the grid.
+        grids[currentGrid].classList.add('grid--hidden');
+
         // Preload images
-        imagesLoaded(body, function() {
+        //imagesLoaded($("#section2"), function() {
             // Initialize Masonry on each grid.
             grids.forEach(function(grid) {
                 var m = new Masonry(grid, {
@@ -158,8 +183,7 @@
                     transitionDuration: 0
                 });
                 masonry.push(m);
-                // Hide the grid.
-                grid.classList.add('grid--hidden');
+                
                 // Init GridLoaderFx.
                 loaders.push(new GridLoaderFx(grid));
             });
@@ -168,11 +192,11 @@
             grids[currentGrid].classList.remove('grid--hidden');
             // Init/Bind events.
             switchGrid("grid--type-c");
-            applyFx("Hapi");
+            applyFx("Satet");
 
             // Remove loading class from body
             body.classList.remove('loading');
-        });
+        //});
     }
 
     function switchGrid(ev) {
