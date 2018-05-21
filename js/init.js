@@ -155,9 +155,18 @@ function updateScrollingClasses() {
 
 function initMap() {
     var uluru = { lat: 19.404108, lng: -98.996918 };
+    var zoomMap = 16;
+    var url_icon_map = "https://appetizers.000webhostapp.com//img/baker_64.png";
+
+    if(isMobile.any()){
+        zoomMap = 16;
+        url_icon_map = "https://appetizers.000webhostapp.com//img/baker_32.png";
+        $(".intro-maps").hide();
+    }
+
     var image = {
         //Icon made by Flaticon Basic License from www.flaticon.com
-        url: 'https://image.flaticon.com/icons/svg/817/817382.svg',
+        url: url_icon_map,
         // This marker is 20 pixels wide by 32 pixels high.
         //size: new google.maps.Size(32, 32),
         // The origin for this image is (0, 0).
@@ -165,11 +174,7 @@ function initMap() {
         // The anchor for this image is the base of the flagpole at (0, 32).
         //anchor: new google.maps.Point(0, 50)
       };
-    var zoomMap = 20;
-
-    if(isMobile.any()){
-        zoomMap = 17;
-    }
+    
 
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: zoomMap,
@@ -260,15 +265,31 @@ function initMap() {
         position: uluru,
         map: map,
         icon: image,
+        title: 'Click para zoom',
         animation: google.maps.Animation.DROP,
     });
-    marker.addListener('click', toggleBounce);
-}
 
-function toggleBounce() {
-    if (marker.getAnimation() !== null) {
-      marker.setAnimation(null);
-    } else {
-      marker.setAnimation(google.maps.Animation.BOUNCE);
-    }
-  }
+    map.addListener('center_changed', function() {
+        // 7 seconds after the center of the map has changed, pan back to the
+        // marker.
+        window.setTimeout(function() {
+          map.panTo(marker.getPosition());
+        }, 10000);
+    });
+
+    marker.addListener('click', function() {
+        map.setZoom(19);
+        map.setCenter(marker.getPosition());
+        if (marker.getAnimation() !== null) {
+            marker.setAnimation(null);
+            if(isMobile.any()){
+                $(".intro-maps").hide();
+            }
+        } else {
+            marker.setAnimation(google.maps.Animation.BOUNCE);
+            if(isMobile.any()){
+                $(".intro-maps").show();
+            }
+        }
+    });
+}
